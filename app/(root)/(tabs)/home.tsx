@@ -4,6 +4,7 @@ import { icons, images } from '@/constants';
 import RideCard from '@/components/RideCard';
 import { router } from 'expo-router';
 import InputField from '@/components/InputField';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const Home = () => {
     const [loading, setLoading] = useState(false)
@@ -40,7 +41,7 @@ const Home = () => {
           </View>
         )}
         ListHeaderComponent={
-          <>
+          <View className='flex flex-col'>
             <View className="flex flex-row items-center justify-between my-10">
               <Text className="text-2xl font-JakartaExtraBold">
                 Welcome Dragovic👋
@@ -59,15 +60,15 @@ const Home = () => {
               <Text className="text-xl font-JakartaBold mt-5 mb-3">
                 Your current location
               </Text>
-              <View className="flex flex-row items-center bg-transparent h-[300px]">
-                    <Image source={images.availableRide} resizeMode='cover'/>
+              <View className="flex items-center bg-transparent w-full " >
+                    <Image source={images.availableRide} resizeMode='cover' className='w-full h-[300]'/>
               </View>
             </View>
 
             <Text className="text-xl font-JakartaBold mt-5 mb-3">
               Recent Rides
             </Text>
-          </>
+          </View>
         }
       />
     </SafeAreaView>

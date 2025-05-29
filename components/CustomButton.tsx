@@ -1,6 +1,8 @@
 import { TouchableOpacity, Text } from "react-native";
 
 import { ButtonProps } from "@/types/type";
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 
 const getBgVariantStyle = (variant: ButtonProps["bgVariant"]) => {
   switch (variant) {
@@ -49,7 +51,7 @@ const CustomButton = ({
       {...props}
     >
       {IconLeft && <IconLeft />}
-      <Text className={`text-lg font-bold ${getTextVariantStyle(textVariant)}`}>
+      <Text className={`text-lg font-bold ${getTextVariantStyle(textVariant)}`} style={{fontSize:hp('2%')}}>
         {title}
       </Text>
       {IconRight && <IconRight />}

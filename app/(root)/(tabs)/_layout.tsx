@@ -10,7 +10,7 @@ const TabIcon = ({
     source: ImageSourcePropType;
     focused: boolean;
   }) => (
-  <>
+  <View className="">
       <View
         className={`rounded-full w-12 h-12 items-center justify-center ${focused ? "bg-general-400" : ""}`}
       >
@@ -21,7 +21,7 @@ const TabIcon = ({
           className="w-7 h-7"
         />
       </View>
-  </>
+  </View>
   );
 
 const Layout = () => {
@@ -33,16 +33,16 @@ const Layout = () => {
       tabBarShowLabel: false,
       tabBarStyle: {
         backgroundColor: "#333333",
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        height:70,
         borderRadius: 50,
         // paddingBottom: 0,
         overflow: "hidden",
         marginHorizontal: 20,
         marginBottom: 20,
-        height: 78,
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        flexDirection: "row",
         position: "absolute",
       },
     }}
